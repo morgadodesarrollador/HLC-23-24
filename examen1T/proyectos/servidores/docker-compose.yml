@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  s1:
+    container_name: servidor1
+    image: jamb-ub-base
+    env_file: 
+      - ./environment.yml
+    build: 
+      context: ${CONTEXT}
+      dockerfile: ./dockerfiles/base/Dockerfile
+      args:
+        - CONTEXT=${CONTEXT}
+        - TZ=${TZ}
+    environment:
+      - HOSTNAME=servidor1
+    volumes:
+      - ./logs:/root/logs
+    networks: 
+      netansible:
+          ipv4_address: 172.160.10.2
+networks: 
+  netansible:
+      ipam: 
+          driver: default
+          config: 
+              - subnet: 172.160.10.0/24 

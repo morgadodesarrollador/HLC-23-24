@@ -1,0 +1,8 @@
+morgado.es
+morgado
+1234
+/Users/morgado/Personal/Modulos/HLC/Proyectos/examen1T
+Usuario creado
+ssh arrancado
+main ejecutada
+tail ejecutado
